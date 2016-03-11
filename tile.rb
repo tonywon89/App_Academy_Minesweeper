@@ -21,11 +21,15 @@ class Tile
     @revealed
   end
 
-  def mine?
+  def bombed?
     @mine
   end
 
   def flagged?
     @flagged
+  end
+
+  def reveal
+    @revealed = true
   end
 end

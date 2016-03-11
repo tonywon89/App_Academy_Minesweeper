@@ -1,4 +1,3 @@
-require_relative 'board'
 require 'byebug'
 
 class Tile
@@ -31,5 +30,9 @@ class Tile
 
   def reveal
     @revealed = true
+  end
+
+  def to_s
+    revealed? ? " " : "*"
   end
 end

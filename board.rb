@@ -1,5 +1,5 @@
 require_relative 'tile'
-
+require 'byebug'
 class Board
 
   def self.empty_grid
@@ -33,4 +33,15 @@ class Board
     grid[row][col] = val
   end
 
+  def render
+    puts "  #{(0...grid.size).to_a.join(' ')}"
+    rows.each_with_index do |row, i|
+      rendered_row = row.map(&:to_s).join(" ")
+      puts "#{i} #{rendered_row}"
+    end
+  end
 end
+
+board = Board.new
+board.populate
+board.render
